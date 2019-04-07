@@ -1,10 +1,10 @@
 #!/bin/bash
 timestamp=$(date)
 working_dir=$(pwd)
-GITDIR=cmd.exe /c echo %GITDIR%
+GITDIR=$(cmd.exe /c echo %GITDIR%)
 
-#change dir to base repository
-cd "/mnt/c/${GITDIR}"
+#move to gitdir, substring to remove \r (carriage return)
+cd "/mnt/c/${GITDIR::-1}"
 
 for repository in $(dirname $(find . -name "*.git" ! -path "./gitBackup/*")); do
 
