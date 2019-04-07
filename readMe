@@ -1,1 +1,4 @@
-BASH readME 
+BASH
+    -git_manager
+    -Easily manage git repositories
+    -Manage repositories from WSL (Windows Sub-system for Linux)
