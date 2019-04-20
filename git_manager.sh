@@ -1,52 +1,33 @@
 #!/bin/bash
 timestamp=$(date)
-working_dir=$(pwd)
-GITDIR=$(cmd.exe /c echo %GITDIR%)
-
-#move to gitdir, substring to remove \r (carriage return)
-cd "/mnt/c/${GITDIR::-1}"
-
+WORKINGDIR=$(pwd)
+#move to git dir
+cd /mnt/c/Users/corey/Corey-All-/R3dHand
 for repository in $(dirname $(find . -name "*.git" ! -path "./gitBackup/*")); do
-
-    #cd to repository to run commands
     pushd ${repository}
-    #prompt
+    #PROMPT
     echo ==============================
     echo STATUS for ${repository}
     echo ==============================
-
     git status
-
     #how to continue
-    echo "Press enter to continue..."
-    #user input
+    echo "press enter to continue..."
     read command
     while [[ ! "${command}" == "" ]]; do
         #statements
         cmd.exe /c git $(echo ${command})
-
-	#prompt
         echo ==============================
         echo STATUS for ${repository}
         echo ==============================
-
-	#status after user command
         git status
-
-	#how to to continue
-	echo "Press enter to continue..."
-	#user input
         read command
     done
     popd
 done
-
 echo DONE
 echo ${timestamp}
-
-#return to bash directory
-cd ${working_dir}
-
-#add variables that need to be unset
-unset timestamp working_dir GITDIR repository command
+#return to working directory
+cd ${WORKINGDIR}
+#unset variables
+unset WORKINGDIR timestamp command repository
 
