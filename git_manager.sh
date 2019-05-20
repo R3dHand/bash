@@ -12,14 +12,18 @@ for repository in $(dirname $(find . -name "*.git" ! -path "./gitBackup/*")); do
     git status
     #how to continue
     echo "press enter to continue..."
+    #input git command
     read command
     while [[ ! "${command}" == "" ]]; do
-        #statements
         cmd.exe /c git $(echo ${command})
+        #prompt again
         echo ==============================
         echo STATUS for ${repository}
         echo ==============================
         git status
+        #how to continue
+        echo "press enter to continue"
+        #input next command
         read command
     done
     popd
