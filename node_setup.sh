@@ -1,11 +1,16 @@
 #!/bin/bash
-#echo "running node_setup..."
+echo "running node_setup..."
 
-#npm init
-#npm install lite-server --save-dev
-#echo "node_modules" >> .gitignore
+cmd.exe /c npm init
+cmd.exe /c npm install lite-server --save-dev
+echo "node_modules" >> .gitignore
 
 #add necessary lines to package.json
+if [[ -f "temp.json" ]]; then
+    rm temp.json
+fi
+sed '/scripts/ a\    "start": "npm run lite",\n    "lite": "lite-server",' <package.json >temp.json
+printf "%s" "$(cat temp.json)" > package.json
 
 
 
@@ -13,7 +18,8 @@
 if [[ -f "index.html" ]];then
     echo "index.html exists... skipping"
 else
-    source "html-template.sh"
+    #change dirs to source script
+    source "/mnt/c/Users/corey/Corey-All-/R3dHand/bash/html-template.sh"
     echo "creating index.html"
 fi
 
@@ -34,3 +40,11 @@ else
     echo "creating ./js"
 fi
 
+echo "run development server[y/N]"
+read option
+if [[ "${option}" == "y" || "${option}" == 'Y' ]]; then
+    cmd.exe /c npm start
+fi
+
+rm temp.json
+echo "DONE"

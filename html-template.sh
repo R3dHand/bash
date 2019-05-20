@@ -42,6 +42,7 @@ echo "<body>" >> index.html
 
 #header
 echo "<header>" >> index.html
+echo "<h1>node_setup successfull</h1>" >> index.html
 echo "</header>" >> index.html
 #header end
 
