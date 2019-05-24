@@ -7,6 +7,6 @@ BASH
         -install essential node modules 
         -add appropriate node scripts to make use of modules
         -create dir for css and js and other needed directories
-        -generate index.html
+        -generate index.html main.css and scripts.js
         -link html use created css and js
-        -open dev server and browser to test succesful creation of project
+        -start dev server and browser to test succesful creation of project
