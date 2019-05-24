@@ -18,12 +18,13 @@ printf "%s" "$(cat temp.json)" > package.json
 if [[ -f "index.html" ]];then
     echo "index.html exists... skipping"
 else
-    #change dirs to source script
     source "/mnt/c/Users/corey/Corey-All-/R3dHand/bash/html-template.sh"
     echo "creating index.html"
 fi
 
 #html template will set script and links so lets create those directories and files
+
+#css
 if [[ -d "./css" ]];then
     echo "css dir exists... skipping"
 else
@@ -32,6 +33,7 @@ else
     echo "creating ./css"
 fi
 
+#java script
 if [[ -d "./js" ]];then
     echo "js dir exists... skipping"
 else
@@ -39,6 +41,14 @@ else
     echo "" > js/scripts.js
     echo "creating ./js"
 fi
+
+#possible needed directories
+if [[ -d "./img" ]];then
+    echo "img dir exists... skipping"
+else
+    mkdir img
+fi
+
 
 echo "run development server[y/N]"
 read option

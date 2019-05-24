@@ -22,12 +22,11 @@ echo "" >> index.html
 #Bootstrap CSS
 echo "    <!-- Bootstrap CSS -->" >> index.html
 echo "    <!-- build:css css/main.css -->" >> index.html
-echo "    <link rel=\"stylesheet\" href=\"node_modules/bootstrap/dist/css/bootstrap.min.css\">" >> index.html
-echo "    <link rel=\"stylesheet\" href=\"node_modules/font-awesome/css/font-awesome.min.css\">" >> index.html
-echo "    <link rel=\"stylesheet\" href=\"node_modules/bootstrap-social/bootstrap-social.css\">" >> index.html
+echo "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">" >> index.html
 echo "    <link rel=\"stylesheet\" href=\"css/styles.css\">" >> index.html
 echo "    <!-- endbuild -->" >> index.html
 #Bootstrap CSS end
+
 
 #title
 echo "    <title></title>" >> index.html
