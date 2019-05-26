@@ -2,8 +2,14 @@
 echo "running node_setup..."
 
 cmd.exe /c npm init
+#server
 cmd.exe /c npm install lite-server --save-dev
+#sass
 cmd.exe /c npm install --save-dev node-sass@4.9.3
+#gulp
+cmd.exe /c npm install -g gulp-cli@2.0.1
+cmd.exe /c npm install gulp@3.9.1 --save-dev
+cmd.exe /c npm install gulp-sass@3.1.0  browser-sync@2.23.6 --save-dev
 echo "node_modules" >> .gitignore
 
 #add necessary lines to package.json
@@ -19,7 +25,7 @@ printf "%s" "$(cat temp.json)" > package.json
 if [[ -f "index.html" ]];then
     echo "index.html exists... skipping"
 else
-    source "/mnt/c/Users/corey/Corey-All-/R3dHand/bash/html-template.sh"
+    cp /mnt/c/Users/corey/Corey-All-/R3dHand/bash/html-template.html index.html
     echo "creating index.html"
 fi
 
@@ -35,7 +41,9 @@ else
     echo "" > css/styles.scss
     echo "creating ./css"
     echo "CONVERT -- .scss --> .css"
-    cmd.exe /c npm run scss
+    #copy gulp-template
+    cp /mnt/c/Users/corey/Corey-All-/R3dHand/bash/gulp-template.js gulpfile.js
+    #cmd.exe /c npm run scss
 fi
 
 #java script
@@ -45,6 +53,7 @@ else
     mkdir js
     echo "" > js/scripts.js
     echo "creating ./js"
+    
 fi
 
 #possible needed directories
@@ -55,11 +64,13 @@ else
 fi
 
 
-echo "run development server[y/N]"
-read option
-if [[ "${option}" == "y" || "${option}" == 'Y' ]]; then
-    cmd.exe /c npm start
-fi
+# echo "run development server[y/N]"
+# read option
+# if [[ "${option}" == "y" || "${option}" == 'Y' ]]; then
+#     cmd.exe /c npm start
+# fi
+
+cmd.exe /c gulp
 
 rm temp.json
 echo "DONE"
