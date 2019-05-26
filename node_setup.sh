@@ -40,10 +40,6 @@ else
     #setup project to use scss
     echo "" > css/styles.scss
     echo "creating ./css"
-    echo "CONVERT -- .scss --> .css"
-    #copy gulp-template
-    cp /mnt/c/Users/corey/Corey-All-/R3dHand/bash/gulp-template.js gulpfile.js
-    #cmd.exe /c npm run scss
 fi
 
 #java script
@@ -53,7 +49,8 @@ else
     mkdir js
     echo "" > js/scripts.js
     echo "creating ./js"
-    
+    #copy gulp-template
+    cp /mnt/c/Users/corey/Corey-All-/R3dHand/bash/gulp-template.js gulpfile.js
 fi
 
 #possible needed directories
