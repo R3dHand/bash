@@ -11,4 +11,4 @@ BASH
         -link html use created css and js
         -start dev server and browser to test succesful creation of project
         -install node-sass add script to convert scss to css
-        -install gulp use to manage tasks
+        -install gulp use to manage tasks, watch files and minify files
