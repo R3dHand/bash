@@ -3,13 +3,18 @@ echo "running node_setup..."
 
 cmd.exe /c npm init
 #server
-cmd.exe /c npm install lite-server --save-dev
+cmd.exe /c npm install --save-dev lite-server
 #sass
 cmd.exe /c npm install --save-dev node-sass@4.9.3
 #gulp
 cmd.exe /c npm install -g gulp-cli@2.0.1
-cmd.exe /c npm install gulp@3.9.1 --save-dev
-cmd.exe /c npm install gulp-sass@3.1.0  browser-sync@2.23.6 --save-dev
+cmd.exe /c npm install --save-dev gulp@3.9.1
+cmd.exe /c npm install --save-dev gulp-sass@3.1.0  browser-sync@2.23.6
+#del is to delete folders
+cmd.exe /c npm install --save-dev del@3.0.0
+#minify
+npm install --save-dev gulp-imagemin@4.1.0
+npm install --save-dev gulp-uglify@3.0.0 gulp-usemin@0.3.29 gulp-rev@8.1.1 gulp-clean-css@3.9.3 gulp-flatmap@1.0.2 gulp-htmlmin@4.0.0
 echo "node_modules" >> .gitignore
 
 #add necessary lines to package.json
