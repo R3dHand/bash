@@ -1,0 +1,13 @@
+#step 1
+    #required
+        # needs to be run first
+        # npm install -g create-react-app@1.5.2
+
+    #create app
+        create-react-app <app name>
+
+    #make react app bootstrap compatable
+        yarn add bootstrap@4.0.0
+    #reactstrap popper
+        yarn add reactstrap@5.0.0
+        yarn add react-popper@0.9.2
