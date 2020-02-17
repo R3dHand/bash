@@ -13,7 +13,7 @@ cmd.exe /c yarn create react-app ${app}
 # change directory to new app
 cmd.exe /c cd "./${app}"
 # compile and open in browser
-cmd.exe /c cd yarn start
+cmd.exe /c yarn start
 
 # create directories for components, redux, shared
 cmd.exe /c md "./src/redux"
